@@ -1,6 +1,6 @@
 const sequelize = require('sequelize');
 
-const DB_DATABASE = process.env.DB_DATABASE || "kubedevnews";
+const DB_DATABASE = process.env.DB_DATABASE || "kubedenews";
 const DB_USERNAME = process.env.DB_USERNAME || "kubedevnews";
 const DB_PASSWORD = process.env.DB_PASSWORD || "Pg#123";
 const DB_HOST = process.env.DB_HOST || "localhost";
