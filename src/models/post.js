@@ -1,16 +1,16 @@
-import { Sequelize, Model, DataTypes } from 'sequelize';
+const sequelize = require('sequelize');
 
 const DB_DATABASE = process.env.DB_DATABASE || "kubedevnews";
 const DB_USERNAME = process.env.DB_USERNAME || "kubedevnews";
 const DB_PASSWORD = process.env.DB_PASSWORD || "Pg#123";
 const DB_HOST = process.env.DB_HOST || "localhost";
 
-const seque = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
+const seque = new sequelize.Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
     host: DB_HOST,
     dialect: 'postgres'
   });
 
-class Post extends Model {
+class Post extends sequelize.Model {
   
   save() {
     
@@ -21,19 +21,19 @@ class Post extends Model {
 
 Post.init({
   title: {
-    type: DataTypes.STRING,
+    type: sequelize.DataTypes.STRING,
     require: true
   },
   summary: {
-    type: DataTypes.STRING,
+    type: sequelize.DataTypes.STRING,
     require: true
   },
   publishDate: {
-    type: DataTypes.DATEONLY,
+    type: sequelize.DataTypes.DATEONLY,
     require: true
   },
   content: {
-    type: DataTypes.STRING,
+    type: sequelize.DataTypes.STRING,
     require: true
   },
 }, {
@@ -41,10 +41,9 @@ Post.init({
   modelName: 'Post' // We need to choose the model name
 })
 
-export function initDatabase() {
+exports.initDatabase = () => {
     seque.sync({ alter: true })
 }
 
-const _Post = Post;
-export { _Post as Post };
+exports.Post = Post;
 
