@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: daraelu/kube-news:v1
+          image: daraelu/kube-news:{{TAG}}
           ports:
           - containerPort: 8080
 
