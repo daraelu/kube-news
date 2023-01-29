@@ -57,15 +57,6 @@ spec:
           image: daraelu/kube-news:v1
           ports:
           - containerPort: 8080
-          env:
-          - name: DB_DATABASE 
-            value: "kubedevnews"
-          - name: DB_USER
-            value: "kubedevnews"
-          - name: DB_PASSWORD
-            value: "Pg#123"
-          - name: DB_HOST
-            value: "postgre"
 
 ---
 apiVersion: v1
@@ -78,5 +69,4 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
