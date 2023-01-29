@@ -68,6 +68,8 @@ spec:
               value: "kubenews"
             - name: DB_PASSWORD
               value: "Pg#123"
+            - name: "DB_HOST"
+              value: "postgre"
 
 ---
 apiVersion: v1
