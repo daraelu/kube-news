@@ -18,9 +18,9 @@ spec:
           - containerPort: 5432
           env:
           - name: POSTGRES_DB
-            value: "kubedevnews"
+            value: "kubenews"
           - name: POSTGRES_USER
-            value: "kubedevnews"
+            value: "kubenews"
           - name: POSTGRES_PASSWORD
             value: "Pg#123"
 
@@ -59,9 +59,9 @@ spec:
           - containerPort: 8080
           env:
             - name: DB_DATABASE
-              value: "kubedevnews"
+              value: "kubenews"
             - name: DB_USERNAME
-              value: "kubedevnews"
+              value: "kubenews"
             - name: DB_PASSWORD
               value: "Pg#123"
             - name: DB_HOST
