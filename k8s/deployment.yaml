@@ -59,9 +59,9 @@ spec:
           - containerPort: 8080
           env:
             - name: DB_DATABASE
-              value: "kubenews"
+              value: "kubedevnews"
             - name: DB_USERNAME
-              value: "kubenews"
+              value: "kubedevnews"
             - name: DB_PASSWORD
               value: "Pg#123"
             - name: DB_HOST
